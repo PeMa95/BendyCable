@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+<title> Speech recognition ~ Home automation </title>
+</head>
+<body>
+
+<form>
+<input type='button' value='Btn1' id='btn'>
+
+</form>
+
+
+<script src="https://unpkg.com/anycontrol/dist/index.umd.min.js"></script>
+<script>
+  var ctrl = new anycontrol()
+ 
+
+  ctrl.addCommand("lights on", function () {
+    console.log('Lights are on')
+	document.body.style.backgroundColor = "white";
+  });
+
+  ctrl.addCommand("lights off", function () {
+    console.log('Lights are off')
+	document.body.style.backgroundColor = "black";
+  });
+
+  ctrl.addCommand("next song", function () {
+    console.log('Playing next song')
+  });
+
+  ctrl.addCommand("go to google", function () {
+    console.log('Redirecting to google')
+	window.location.href = "http://www.google.com";
+  });
+
+  ctrl.start();
+</script> 
+
+</body>
+</html>
